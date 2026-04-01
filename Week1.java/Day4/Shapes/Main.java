@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class Main{
     public static void main(String args[]){
         List<Shape> shapes=List.of(
-            new Circle("balck",2),
+            new Circle("black",2),
             new Rectangle("green", 4, 5),
             new Triangle("white", 3, 4, 5)
 

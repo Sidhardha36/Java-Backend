@@ -10,7 +10,7 @@ public class BankAccount {
     
     public void deposit(double amount){
         balance+=amount;
-        System.out.println("Deposited:"+amount+"Balance:"+balance);
+        System.out.println("Deposited:"+ amount +" Balance:"+ balance);
     }
 
     
@@ -19,7 +19,7 @@ public void withdraw(double amount) throws InsufficientFundsException {
             throw new InsufficientFundsException("Cannot withdraw:"+ amount+", Check Balance:"+ balance);
         }
         balance-=amount;
-        System.out.println("Withdraw: "+amount+"Balance:"+balance);
+        System.out.println("Withdraw: "+ amount + " Balance: "+ balance);
     }
    
     public double getBalance(){

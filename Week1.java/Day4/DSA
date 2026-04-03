@@ -1,0 +1,76 @@
+
+// Blind75-Group Anagram
+
+import java.util.*;
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        
+        HashMap<String,List<String>> map=new HashMap<>();
+
+        for(int i=0;i<strs.length;i++){
+            String word=strs[i];
+            char[] ch=word.toCharArray();
+            Arrays.sort(ch);
+            String st=new String(ch);
+
+            if(map.containsKey(st)){
+                map.get(st).add(word);
+
+            }else{
+                List<String> list = new ArrayList<>();
+                list.add(word);
+                map.put(st, list);
+            }
+            
+        }
+        return new ArrayList<>(map.values());
+
+        
+    }
+}
+
+//-----------------------------------------------------------------------------
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        
+        HashMap<String,List<String>> map=new HashMap<>();
+
+        for(int i=0;i<strs.length;i++){
+            String word=strs[i];
+            char[] ch=word.toCharArray();
+            Arrays.sort(ch);
+            String st=new String(ch);
+
+           if(!map.containsKey(st)){
+            map.put(st,new ArrayList<>());
+           }
+           map.get(st).add(word);
+            
+        }
+        return new ArrayList<>(map.values());
+
+        
+    }
+}
+
+//-----------------------------------------------------------------------------
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        
+        HashMap<String,List<String>> map=new HashMap<>();
+
+        for(String word:strs){
+            char[] ch=word.toCharArray();
+            Arrays.sort(ch);
+            String st=new String(ch);
+
+            map.putIfAbsent(st,new ArrayList<>());
+            map.get(st).add(word);
+        }
+        return new ArrayList<>(map.values());
+
+        
+    }
+}

@@ -17,12 +17,12 @@ class Solution {
                     maxfreq=Math.max(maxfreq,val);
                 }
 
-                int len=j-i+1;
+                int length=j-i+1;
 
-                int replaceStr=len-maxfreq;
+                int replaceStr=length-maxfreq;
 
                 if(replaceStr<=k){
-                    maxlen=Math.max(maxlen,len);
+                    maxlen=Math.max(maxlen,length);
                 }
 
 
@@ -31,3 +31,5 @@ class Solution {
         return maxlen;
     }
 }
+
+//

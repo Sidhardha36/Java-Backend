@@ -32,4 +32,37 @@ class Solution {
     }
 }
 
-//
+// Optimal Approach
+
+class Solution {
+    public int characterReplacement(String s, int k) {
+        if(s.length()<=1) return s.length();
+
+        int[] freq=new int[26];
+        int maxlen=0,maxfreq=0;
+        int start=0;
+    
+        for(int end=0;end<s.length();end++){
+            
+            char c=s.charAt(end);
+            freq[c-'A']++;
+                
+                
+            maxfreq=Math.max(maxfreq,freq[c-'A']);
+                
+
+            int len=end-start+1;
+
+            int replaceStr=len-maxfreq;
+
+            if(replaceStr>k){
+                freq[s.charAt(start)-'A']--;
+                start++;
+            }
+            maxlen=Math.max(maxlen,end-start+1);
+
+        }
+        return maxlen;
+    }
+}
+
